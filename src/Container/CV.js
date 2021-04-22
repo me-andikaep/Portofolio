@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Portofolio = (props) => {
+const CV = (props) => {
     return (
         <div>
-            zzzz
+            cv
         </div>
     )
 }
 
-export default Portofolio
+export default CV

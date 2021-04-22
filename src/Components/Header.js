@@ -5,6 +5,9 @@ import { NavLink } from "react-router-dom";
 
 const Header = (props) => {
    
+    // const onActiveCss = {
+    //     color: "#2893E1",
+    // };
 
     return (
         <div className="c-header">
@@ -22,7 +25,7 @@ const Header = (props) => {
                 <li className="navbar-nav-item">
                     <NavLink
                         className="navbar-nav-link"
-                        to="/u/dashboard"
+                        to="/portofolio"
                         activeClassName="active"
                         // activeStyle={onActiveCss}
                     >
@@ -32,7 +35,7 @@ const Header = (props) => {
                 <li className="navbar-nav-item">
                     <NavLink
                         className="navbar-nav-link"
-                        to="/u/dashboard"
+                        to="/cv"
                         activeClassName="active"
                         // activeStyle={onActiveCss}
                     >
@@ -40,6 +43,10 @@ const Header = (props) => {
                     </NavLink>
                 </li>
             </ul>
+
+            <div className="txt">
+                Andikaep.dev
+            </div>
         </div>
     )
 }

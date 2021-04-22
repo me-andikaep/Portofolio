@@ -1,0 +1,44 @@
+@import './ColorList.scss';
+@import './breakpoints.scss';
+
+
+.c-card-profile{
+    position: relative;
+    display: flex;
+    padding: 40px;
+    background-color: $GREY3;
+    border-radius: 16px;
+    // width: 100%;
+    overflow: hidden;
+    word-break: break-all;
+
+    margin: 0 auto;
+
+    
+    @include media(">desktop") { 
+        max-width: 1000px;
+    }
+
+    .card-content{
+        display: flex;
+        flex: 1;
+
+        
+    }
+    
+    .card-name{
+        color: $GREY2;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .card-name:after{
+        content: "";
+        background: black;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 30px;
+        left: 40px;
+        width: 50px;
+        height: 3px;
+    }
+}

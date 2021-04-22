@@ -15,6 +15,34 @@ const routes = [
                 fallback: <ProgressBar />
             }
         ),
+    },
+    {
+        path: "/portofolio",
+        name: "Portofolio",
+        component: Lazyloading(
+            () => {
+                return new Promise(resolve => {
+                    setTimeout(() => resolve(import("../Container/Portofolio")), 1500);
+                });
+            },
+            {
+                fallback: <ProgressBar />
+            }
+        ),
+    },
+    {
+        path: "/cv",
+        name: "CV",
+        component: Lazyloading(
+            () => {
+                return new Promise(resolve => {
+                    setTimeout(() => resolve(import("../Container/CV")), 1500);
+                });
+            },
+            {
+                fallback: <ProgressBar />
+            }
+        ),
     }
 ]
 

@@ -1,11 +1,20 @@
 import React from 'react'
+import '../Styles/profile.scss'
 
 const Profile = (props) => {
     return (
-        <div
-            // style={{ height: 1000 }}
-        >
-            profileasdsad
+        <div className="c-card-profile">
+            <div className="card-content">
+                <div className="card-name">
+                    Andika Eka Putra
+                </div>
+            </div>
+            <div className="card-content">
+                <div className="card-name">
+                    Andika Eka Putra
+                </div>
+            </div>
+            
         </div>
     )
 }

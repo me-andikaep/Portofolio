@@ -1,25 +1,43 @@
-import logo from './logo.svg';
+import React, {useState} from 'react'
 import './App.css';
+import './Styles/CustomStyles.scss'
+import Header from './Components/Header';
+import routes from "./Config/Routes";
+import {
+  Switch,
+  Route,
+  // Redirect
+} from "react-router-dom";
+
 
 function App() {
+
+
+  const getRoutes = routeList => {
+    return routeList.map((prop, key) => {
+      return (
+        <Route
+          path={prop.path}
+          component={prop.component}
+          key={key}
+        />
+      );
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="c-wrapper-content">
+        <div className="wrapper-content">
+          <Switch>
+            {getRoutes(routes)}
+          </Switch>
+        </div>
+      </div>
+
     </div>
   );
-}
+} 
 
 export default App;

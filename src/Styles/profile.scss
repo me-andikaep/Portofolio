@@ -1,5 +1,6 @@
 @import './ColorList.scss';
 @import './breakpoints.scss';
+@import './CustomStyles.scss';
 
 
 .c-card-profile{
@@ -11,34 +12,71 @@
     // width: 100%;
     overflow: hidden;
     word-break: break-all;
-
     margin: 0 auto;
+    flex-direction: column;
 
     
-    @include media(">desktop") { 
-        max-width: 1000px;
+    @include media(">tablet") { 
+        max-width: 900px;
+        flex-direction: row;
+    }
+
+    .c-card-content{
+        display: flex;
+        flex: 1;
     }
 
     .card-content{
         display: flex;
-        flex: 1;
+        flex-direction: column;
 
-        
+        .card-name{
+            color: $GREY2;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+
+            @include word-wrap()
+        }
+    
+        // .card-name:after{
+        //     content: "";
+        //     background: black;
+        //     position: absolute;
+        //     top : 80px;
+        //     left: 40px;
+        //     width: 50px;
+        //     height: 3px;
+        // }
+
+        .card-text{
+            font-weight: 500;
+            font-size: 14px;
+            color: $GREY4;
+
+            .txt{
+                @include word-wrap()
+            }
+        }
+    }
+
+    .card-content-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .card-img-frame{
+            width: 200px;
+            height: 200px;
+            border: 2px solid $GREY4;
+            border-radius: 8px;
+
+            -webkit-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.60);
+            -moz-box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.60);
+            box-shadow: inset 0px 0px 15px 0px rgba(0,0,0,0.60);
+        }
     }
     
-    .card-name{
-        color: $GREY2;
-        font-weight: bold;
-        font-size: 24px;
-    }
-    .card-name:after{
-        content: "";
-        background: black;
-        position: absolute;
-        bottom: 0;
-        margin-bottom: 30px;
-        left: 40px;
-        width: 50px;
-        height: 3px;
-    }
+   
 }

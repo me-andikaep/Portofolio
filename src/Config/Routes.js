@@ -15,6 +15,7 @@ const routes = [
                 fallback: <ProgressBar />
             }
         ),
+        isExact: true,
     },
     {
         path: "/portofolio",
@@ -43,6 +44,7 @@ const routes = [
                 fallback: <ProgressBar />
             }
         ),
+        isExact: true,
     }
 ]
 

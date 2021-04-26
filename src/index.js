@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './Container/App/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+
+
+import firebase from './Config/FirebaseConfig';
+
+console.log('firebase', firebase)
 
 ReactDOM.render(
   <React.StrictMode>

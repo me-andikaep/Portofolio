@@ -45,7 +45,7 @@ const Header = (props) => {
             </ul>
 
             <div className="txt">
-                Andikaep.dev
+                {/* Andikaep.dev */}
             </div>
         </div>
     )

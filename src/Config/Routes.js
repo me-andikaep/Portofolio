@@ -8,7 +8,7 @@ const routes = [
         component: Lazyloading(
             () => {
                 return new Promise(resolve => {
-                    setTimeout(() => resolve(import("../Container/Profile")), 1500);
+                    setTimeout(() => resolve(import("../Container/Pages/Profile")), 1500);
                 });
             },
             {
@@ -23,7 +23,7 @@ const routes = [
         component: Lazyloading(
             () => {
                 return new Promise(resolve => {
-                    setTimeout(() => resolve(import("../Container/Portofolio")), 1500);
+                    setTimeout(() => resolve(import("../Container/Pages/Portofolio")), 1500);
                 });
             },
             {
@@ -37,7 +37,7 @@ const routes = [
         component: Lazyloading(
             () => {
                 return new Promise(resolve => {
-                    setTimeout(() => resolve(import("../Container/CV")), 1500);
+                    setTimeout(() => resolve(import("../Container/Pages/CV")), 1500);
                 });
             },
             {

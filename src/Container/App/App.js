@@ -11,6 +11,8 @@ import {
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../../Config/redux";
+import Login from "../Pages/Login";
+
 
 function App(props) {
     const currentLocation = window.location.pathname;
@@ -34,16 +36,27 @@ function App(props) {
     return (
         <Provider store={store}>
             <div className="App">
-                <Header />
-                <div className="c-wrapper-content">
-                    <div className="wrapper-content">
-                        {currentLocation === "/" ? (
-                            history.push("/profile")
-                        ) : (
-                            <Switch>{getRoutes(routes)}</Switch>
-                        )}
+                <Switch>
+                    <Route path="/login" component={Login} />
+
+                    <div className="c-wrapper">
+                        <Header />
+                        <div className="c-wrapper-content">
+                   
+                            <div className="wrapper-content">
+                            
+                                {currentLocation === "/" ? (
+                                    history.push("/profile")
+                                ) : (
+                                    <Switch>{getRoutes(routes)}</Switch>
+                                )}
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    
+                </Switch>
+                
+                
             </div>
         </Provider>
     );

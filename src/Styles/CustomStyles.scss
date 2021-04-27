@@ -32,6 +32,7 @@ html {
     overflow: hidden;
 }
 
+
 .c-header{
     height: 100px;
     display: flex;
@@ -89,12 +90,21 @@ html {
     }
 }
 
-.c-wrapper-content{
-    // width: 100%;
-    // height: calc(100vh - 100px);
-    height: 100%;
-    background-color: $BACKGROUND;
-    margin-top: 100px;
-    padding: 50px;
 
+.c-wrapper{
+    position: relative;
+    height: 100%;
+
+    .c-wrapper-content{
+        position: relative;
+        // width: 100%;
+        // height: calc(100vh - 100px);
+        height: 100%;
+        background-color: $BACKGROUND;
+        // margin-top: 100px;
+        top: 100px;
+        padding: 50px;
+    
+    }
 }
+

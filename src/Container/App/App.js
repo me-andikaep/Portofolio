@@ -12,7 +12,10 @@ import {
 import { Provider } from "react-redux";
 import { store } from "../../Config/redux";
 import Login from "../Pages/Login";
+import Admin from "../Pages/AdminAddContent";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App(props) {
     const currentLocation = window.location.pathname;
@@ -36,27 +39,34 @@ function App(props) {
     return (
         <Provider store={store}>
             <div className="App">
+                <ToastContainer
+                    position="top-right"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick={false}
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable={false}
+                    pauseOnHover
+                />
                 <Switch>
                     <Route path="/login" component={Login} />
+                    <Route path="/admin" component={Admin} />
 
                     <div className="c-wrapper">
                         <Header />
                         <div className="c-wrapper-content">
-                   
-                            <div className="wrapper-content">
-                            
+                            {/* <div className="wrapper-content"> */}
                                 {currentLocation === "/" ? (
                                     history.push("/profile")
                                 ) : (
                                     <Switch>{getRoutes(routes)}</Switch>
                                 )}
-                            </div>
+                            {/* </div> */}
                         </div>
                     </div>
-                    
                 </Switch>
-                
-                
             </div>
         </Provider>
     );

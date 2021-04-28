@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import "../../Styles/auth.scss";
 import { LoginAdminFirebase } from "../../Config/redux/action/firebaseAction";
+import { toast } from 'react-toastify';
 
 const Login = (props) => {
     const [dtlogin, setDtlogin] = useState({
@@ -13,13 +14,16 @@ const Login = (props) => {
         setDtlogin({ ...dtlogin, [e.target.name]: e.target.value });
     };
 
-    console.log("dtlogin", dtlogin);
-
     const onSubmitLogin = async () => {
-        // const { history } = this.props
-        const res = await props.onLoginUser(dtlogin).catch((err) => err);
+        const res = await props
+            .onLoginUser(dtlogin)
+            .catch((err) => {
+                toast.error(err.message)
+            });
         if (res) {
-            console.log("res2", res);
+            props.history.push("/admin");
+            toast.success(res.operationType);
+
         }
     };
 

@@ -1,4 +1,4 @@
-import React from "react"; // useState
+import React, { Fragment } from "react"; // useState
 import "./App.css";
 import "../../Styles/CustomStyles.scss";
 import Header from "../../Components/Header";
@@ -51,21 +51,24 @@ function App(props) {
                     pauseOnHover
                 />
                 <Switch>
-                    <Route path="/login" component={Login} />
-                    <Route path="/admin" component={Admin} />
-
-                    <div className="c-wrapper">
-                        <Header />
-                        <div className="c-wrapper-content">
-                            {/* <div className="wrapper-content"> */}
+                    <Fragment>
+                        <Route path="/login" component={Login} />
+                        <Route path="/admin" component={Admin} />
+                        <div className="c-wrapper">
+                            <Header />
+                            <div className="c-wrapper-content">
+                                {/* <div className="wrapper-content"> */}
                                 {currentLocation === "/" ? (
                                     history.push("/profile")
                                 ) : (
-                                    <Switch>{getRoutes(routes)}</Switch>
+                                    <Switch>
+                                        {getRoutes(routes)}
+                                    </Switch>
                                 )}
-                            {/* </div> */}
+                                {/* </div> */}
+                            </div>
                         </div>
-                    </div>
+                    </Fragment>
                 </Switch>
             </div>
         </Provider>

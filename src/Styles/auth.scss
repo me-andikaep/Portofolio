@@ -26,7 +26,7 @@
     .container-card{
         width: 300px;
         // height: 250px;
-        background-color: $BACKGROUND;
+        // background-color: $BACKGROUND;
 
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 1rem;
@@ -222,7 +222,7 @@
             }
 
             .btn-2{
-                color: $GREEN1;
+                color: $SECONDARY;
                 background-color: $WHITE;
                 @include btn-action-auth()
             }

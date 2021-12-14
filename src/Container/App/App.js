@@ -37,42 +37,38 @@ function App(props) {
     };
 
     return (
-        <Provider store={store}>
-            <div className="App">
-                <ToastContainer
-                    position="top-right"
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick={false}
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable={false}
-                    pauseOnHover
-                />
-                <Switch>
-                    <Fragment>
-                        <Route path="/login" component={Login} />
-                        <Route path="/admin" component={Admin} />
-                        <div className="c-wrapper">
-                            <Header />
-                            <div className="c-wrapper-content">
-                                {/* <div className="wrapper-content"> */}
-                                {currentLocation === "/" ? (
-                                    history.push("/profile")
-                                ) : (
-                                    <Switch>
-                                        {getRoutes(routes)}
-                                    </Switch>
-                                )}
-                                {/* </div> */}
-                            </div>
-                        </div>
-                    </Fragment>
-                </Switch>
-            </div>
-        </Provider>
-    );
+			<Provider store={store}>
+				<div className='App'>
+					<ToastContainer
+						position='top-right'
+						autoClose={5000}
+						hideProgressBar={false}
+						newestOnTop={false}
+						closeOnClick={false}
+						rtl={false}
+						pauseOnFocusLoss
+						draggable={false}
+						pauseOnHover
+					/>
+					<Switch>
+						<Fragment>
+							<Route path='/login' component={Login} />
+							<Route path='/admin' component={Admin} />
+							<div className='c-wrapper'>
+								<Header />
+								<div className='c-wrapper-content'>
+									{currentLocation === '/' ? (
+										history.push('/profile')
+									) : (
+										<Switch>{getRoutes(routes)}</Switch>
+									)}
+								</div>
+							</div>
+						</Fragment>
+					</Switch>
+				</div>
+			</Provider>
+		);
 }
 
 export default App;
